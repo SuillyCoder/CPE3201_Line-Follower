@@ -4,7 +4,7 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+Line_Follower.sym --cmf=Line_Follower.cmf -z -Q16F877A \
-  -oC:\Users\User\AppData\Local\Temp\s2l0.6 -MLine_Follower.map -E1 \
+  -oC:\Users\User\AppData\Local\Temp\s3mk.6 -MLine_Follower.map -E1 \
   -ver=XC8 -ASTACK=0110h-016fh -pstack=STACK -ACONST=00h-0FFhx32 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 \
   -ASTRING=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -251,7 +251,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 12 in file "C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c"
+		line 12 in file "C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -281,10 +281,10 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c
+C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c
 		_main          		CODE           	07DD	0000	31
 
-C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c estimated size: 31
+C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c estimated size: 31
 
 shared
 		__initializatio		CODE           	07FC	0000	0

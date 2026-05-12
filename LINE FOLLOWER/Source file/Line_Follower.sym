@@ -142,14 +142,15 @@ startup.as
 Line_Follower.obj
 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 2761 7DD 0 CODE 0
-C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c
+C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c
 12 7DD 0 CODE 0
 15 7DD 0 CODE 0
-24 7E2 0 CODE 0
-27 7E4 0 CODE 0
-30 7E6 0 CODE 0
-31 7E8 0 CODE 0
-33 7E9 0 CODE 0
+16 7E1 0 CODE 0
+21 7E2 0 CODE 0
+24 7E3 0 CODE 0
+27 7E5 0 CODE 0
+30 7E7 0 CODE 0
+33 7E8 0 CODE 0
 18 7EA 0 CODE 0
 20 7EA 0 CODE 0
 21 7F0 0 CODE 0

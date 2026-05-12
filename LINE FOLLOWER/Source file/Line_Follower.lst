@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Tue May 05 14:21:05 2026
+                                                                                               Tue May 12 14:54:38 2026
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	16F877A
@@ -88,7 +88,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
     82 ;;
     83 ;; *************** function _main *****************
     84 ;; Defined at:
-    85 ;;		line 12 in file "C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c"
+    85 ;;		line 12 in file "C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c"
     86 ;; Parameters:    Size  Location     Type
     87 ;;		None
     88 ;; Auto vars:     Size  Location     Type
@@ -124,128 +124,129 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    118  07DE  1683               	bsf	3,5	;RP0=1, select bank1
    119  07DF  1303               	bcf	3,6	;RP1=0, select bank1
    120  07E0  0086               	movwf	6	;volatile
-   121  07E1  2FE9               	goto	l487
-   122  07E2                     l481:	
-   123                           ;Line_Follower.c: 22: {
-   124                           ;Line_Follower.c: 23: case 0x40:
+   121  07E1                     L3:	
+   122                           
+   123                           ;Line_Follower.c: 16: TRISD = 0x00;
+   124  07E1  0188               	clrf	8	;volatile
    125                           
    126                           ;Line_Follower.c: 21: switch (sensor)
-   127                           
-   128                           ;Line_Follower.c: 16: TRISD = 0x00;
-   129                           
-   130                           
-   131                           ;Line_Follower.c: 24: PORTD = 0x06;
-   132  07E2  3006               	movlw	6
-   133  07E3  2FE7               	goto	L2
-   134  07E4                     l483:	
-   135                           ;Line_Follower.c: 26: case 0x80:
-   136                           
-   137                           ;Line_Follower.c: 25: break;
+   127  07E2  2FEA               	goto	l11
+   128  07E3                     l481:	
+   129                           ;Line_Follower.c: 22: {
+   130                           ;Line_Follower.c: 23: case 0x40:
+   131                           
+   132                           
+   133                           ;Line_Follower.c: 24: PORTD = 0x09;
+   134  07E3  3009               	movlw	9
+   135  07E4  2FE9               	goto	L2
+   136  07E5                     l483:	
+   137                           ;Line_Follower.c: 26: case 0x80:
    138                           
-   139                           
-   140                           ;Line_Follower.c: 27: PORTD = 0x09;
-   141  07E4  3009               	movlw	9
-   142  07E5  2FE7               	goto	L2
-   143  07E6                     l485:	
-   144                           ;Line_Follower.c: 29: case 0xC0:
-   145                           
-   146                           ;Line_Follower.c: 28: break;
+   139                           ;Line_Follower.c: 25: break;
+   140                           
+   141                           
+   142                           ;Line_Follower.c: 27: PORTD = 0x06;
+   143  07E5  3006               	movlw	6
+   144  07E6  2FE9               	goto	L2
+   145  07E7                     l485:	
+   146                           ;Line_Follower.c: 29: case 0xC0:
    147                           
-   148                           
-   149                           ;Line_Follower.c: 30: PORTD = 0x05;
-   150  07E6  3005               	movlw	5
-   151  07E7                     L2:	
-   152  07E7  0088               	movwf	8	;volatile
+   148                           ;Line_Follower.c: 28: break;
+   149                           
+   150  07E7  2FE1               	goto	L3
+   151  07E8                     l487:	
+   152                           ;Line_Follower.c: 32: default:
    153                           
    154                           ;Line_Follower.c: 31: break;
-   155  07E8  2FEA               	goto	l11
-   156  07E9                     l487:	
-   157                           ;Line_Follower.c: 32: default:
+   155                           
+   156                           ;Line_Follower.c: 30: PORTD = 0x00;
+   157                           
    158                           
-   159                           
-   160                           ;Line_Follower.c: 33: PORTD = 0x00;
-   161  07E9  0188               	clrf	8	;volatile
-   162  07EA                     l11:	
-   163                           ;Line_Follower.c: 18: while (1)
-   164                           
-   165                           ;Line_Follower.c: 35: }
-   166                           
-   167                           ;Line_Follower.c: 34: break;
-   168                           
+   159                           ;Line_Follower.c: 33: PORTD = 0x05;
+   160  07E8  3005               	movlw	5
+   161  07E9                     L2:	
+   162  07E9  0088               	movwf	8	;volatile
+   163  07EA                     l11:	
+   164                           ;Line_Follower.c: 18: while (1)
+   165                           
+   166                           ;Line_Follower.c: 35: }
+   167                           
+   168                           ;Line_Follower.c: 34: break;
    169                           
-   170                           ;Line_Follower.c: 19: {
-   171                           ;Line_Follower.c: 20: sensor = PORTB & 0xC0;
-   172  07EA  1283               	bcf	3,5	;RP0=0, select bank0
-   173  07EB  0806               	movf	6,w	;volatile
-   174  07EC  39C0               	andlw	192
-   175  07ED  00F0               	movwf	??_main
-   176  07EE  0870               	movf	??_main,w
-   177  07EF  00F1               	movwf	main@sensor
-   178  07F0  0871               	movf	main@sensor,w
-   179                           
-   180                           ; Switch size 1, requested type "space"
-   181                           ; Number of cases is 3, Range of values is 64 to 192
-   182                           ; switch strategies available:
-   183                           ; Name         Instructions Cycles
-   184                           ; simple_byte           10     6 (average)
-   185                           ; jumptable            263     9 (fixed)
-   186                           ;	Chosen strategy is simple_byte
-   187  07F1  3A40               	xorlw	64	; case 64
-   188  07F2  1903               	skipnz
-   189  07F3  2FE2               	goto	l481
-   190  07F4  3AC0               	xorlw	192	; case 128
-   191  07F5  1903               	skipnz
-   192  07F6  2FE4               	goto	l483
-   193  07F7  3A40               	xorlw	64	; case 192
-   194  07F8  1903               	skipnz
-   195  07F9  2FE6               	goto	l485
-   196  07FA  2FE9               	goto	l487
-   197  07FB  2FEA               	goto	l11
-   198  07FC                     __end_of_main:	
-   199  007E                     btemp	set	126	;btemp
-   200  007E                     wtemp	set	126
-   201  007E                     wtemp0	set	126
-   202  0080                     wtemp1	set	128
-   203  0082                     wtemp2	set	130
-   204  0084                     wtemp3	set	132
-   205  0086                     wtemp4	set	134
-   206  0088                     wtemp5	set	136
-   207  007F                     wtemp6	set	127
-   208  007E                     ttemp	set	126
-   209  007E                     ttemp0	set	126
-   210  0081                     ttemp1	set	129
-   211  0084                     ttemp2	set	132
-   212  0087                     ttemp3	set	135
-   213  007F                     ttemp4	set	127
-   214  007E                     ltemp	set	126
-   215  007E                     ltemp0	set	126
-   216  0082                     ltemp1	set	130
-   217  0086                     ltemp2	set	134
-   218  0080                     ltemp3	set	128
-   219                           
-   220                           	psect	cinit
-   221  07FC                     start_initialization:	
-   222  07FC                     __initialization:	
-   223  07FC                     end_of_initialization:	
-   224                           ;End of C runtime variable initialization code
-   225                           
-   226  07FC                     __end_of__initialization:	
-   227  07FC  0183               	clrf	3
-   228  07FD  120A  118A  2FDD   	ljmp	_main	;jump to C main() function
-   229                           
-   230                           	psect	cstackCOMMON
-   231  0070                     __pcstackCOMMON:	
-   232  0070                     ?_main:	
-   233  0070                     ??_main:	
-   234                           ; 0 bytes @ 0x0
-   235                           
+   170                           
+   171                           ;Line_Follower.c: 19: {
+   172                           ;Line_Follower.c: 20: sensor = PORTB & 0xC0;
+   173  07EA  1283               	bcf	3,5	;RP0=0, select bank0
+   174  07EB  0806               	movf	6,w	;volatile
+   175  07EC  39C0               	andlw	192
+   176  07ED  00F0               	movwf	??_main
+   177  07EE  0870               	movf	??_main,w
+   178  07EF  00F1               	movwf	main@sensor
+   179  07F0  0871               	movf	main@sensor,w
+   180                           
+   181                           ; Switch size 1, requested type "space"
+   182                           ; Number of cases is 3, Range of values is 64 to 192
+   183                           ; switch strategies available:
+   184                           ; Name         Instructions Cycles
+   185                           ; simple_byte           10     6 (average)
+   186                           ; jumptable            263     9 (fixed)
+   187                           ;	Chosen strategy is simple_byte
+   188  07F1  3A40               	xorlw	64	; case 64
+   189  07F2  1903               	skipnz
+   190  07F3  2FE3               	goto	l481
+   191  07F4  3AC0               	xorlw	192	; case 128
+   192  07F5  1903               	skipnz
+   193  07F6  2FE5               	goto	l483
+   194  07F7  3A40               	xorlw	64	; case 192
+   195  07F8  1903               	skipnz
+   196  07F9  2FE7               	goto	l485
+   197  07FA  2FE8               	goto	l487
+   198  07FB  2FEA               	goto	l11
+   199  07FC                     __end_of_main:	
+   200  007E                     btemp	set	126	;btemp
+   201  007E                     wtemp	set	126
+   202  007E                     wtemp0	set	126
+   203  0080                     wtemp1	set	128
+   204  0082                     wtemp2	set	130
+   205  0084                     wtemp3	set	132
+   206  0086                     wtemp4	set	134
+   207  0088                     wtemp5	set	136
+   208  007F                     wtemp6	set	127
+   209  007E                     ttemp	set	126
+   210  007E                     ttemp0	set	126
+   211  0081                     ttemp1	set	129
+   212  0084                     ttemp2	set	132
+   213  0087                     ttemp3	set	135
+   214  007F                     ttemp4	set	127
+   215  007E                     ltemp	set	126
+   216  007E                     ltemp0	set	126
+   217  0082                     ltemp1	set	130
+   218  0086                     ltemp2	set	134
+   219  0080                     ltemp3	set	128
+   220                           
+   221                           	psect	cinit
+   222  07FC                     start_initialization:	
+   223  07FC                     __initialization:	
+   224  07FC                     end_of_initialization:	
+   225                           ;End of C runtime variable initialization code
+   226                           
+   227  07FC                     __end_of__initialization:	
+   228  07FC  0183               	clrf	3
+   229  07FD  120A  118A  2FDD   	ljmp	_main	;jump to C main() function
+   230                           
+   231                           	psect	cstackCOMMON
+   232  0070                     __pcstackCOMMON:	
+   233  0070                     ?_main:	
+   234  0070                     ??_main:	
+   235                           ; 0 bytes @ 0x0
    236                           
-   237                           ; 0 bytes @ 0x0
-   238  0070                     	ds	1
-   239  0071                     main@sensor:	
-   240                           
-   241                           ; 1 bytes @ 0x1
-   242  0071                     	ds	1
+   237                           
+   238                           ; 0 bytes @ 0x0
+   239  0070                     	ds	1
+   240  0071                     main@sensor:	
+   241                           
+   242                           ; 1 bytes @ 0x1
+   243  0071                     	ds	1
 
 
 Data Sizes:
@@ -332,10 +333,10 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Tue May 05 14:21:05 2026
+Symbol Table                                                                                   Tue May 12 14:54:38 2026
 
-            __CFG_CP$OFF 0000                       l11 07EA                      l481 07E2  
-                    l483 07E4                      l485 07E6                      l487 07E9  
+            __CFG_CP$OFF 0000                       l11 07EA                      l481 07E3  
+                    l483 07E5                      l485 07E7                      l487 07E8  
            __CFG_CPD$OFF 0000             __CFG_FOSC$XT 0000             __CFG_LVP$OFF 0000  
            __CFG_WRT$OFF 0000                     _main 07DD                     btemp 007E  
           __CFG_BOREN$ON 0000                     ltemp 007E                     start 0000  

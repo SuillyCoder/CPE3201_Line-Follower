@@ -21,16 +21,16 @@ void main(void)
 		switch (sensor)
 		{
 			case 0x40:
-				PORTD = 0x06;
-				break;
-			case 0x80:
 				PORTD = 0x09;
 				break;
+			case 0x80:
+				PORTD = 0x06;
+				break;
 			case 0xC0:
-				PORTD = 0x05;
+				PORTD = 0x00;
 				break;
 			default:
-				PORTD = 0x00;
+				PORTD = 0x05;
 				break;
 		}
 	}

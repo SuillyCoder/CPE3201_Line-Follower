@@ -312,7 +312,7 @@ main@sensor:	; 1 bytes @ 0x1
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 12 in file "C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c"
+;;		line 12 in file "C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -339,7 +339,7 @@ main@sensor:	; 1 bytes @ 0x1
 ;;
 psect	maintext
 psect	maintext
-	file	"C:\Users\User\Documents\College Works\Embedded Systems\LINE FOLLOWER\Source file\Line_Follower.c"
+	file	"C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c"
 	line	12
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -386,8 +386,8 @@ l13:
 	line	24
 	
 l481:	
-;Line_Follower.c: 24: PORTD = 0x06;
-	movlw	(06h)
+;Line_Follower.c: 24: PORTD = 0x09;
+	movlw	(09h)
 	movwf	(8)	;volatile
 	line	25
 ;Line_Follower.c: 25: break;
@@ -399,8 +399,8 @@ l15:
 	line	27
 	
 l483:	
-;Line_Follower.c: 27: PORTD = 0x09;
-	movlw	(09h)
+;Line_Follower.c: 27: PORTD = 0x06;
+	movlw	(06h)
 	movwf	(8)	;volatile
 	line	28
 ;Line_Follower.c: 28: break;
@@ -412,9 +412,8 @@ l16:
 	line	30
 	
 l485:	
-;Line_Follower.c: 30: PORTD = 0x05;
-	movlw	(05h)
-	movwf	(8)	;volatile
+;Line_Follower.c: 30: PORTD = 0x00;
+	clrf	(8)	;volatile
 	line	31
 ;Line_Follower.c: 31: break;
 	goto	l11
@@ -425,8 +424,9 @@ l17:
 	line	33
 	
 l487:	
-;Line_Follower.c: 33: PORTD = 0x00;
-	clrf	(8)	;volatile
+;Line_Follower.c: 33: PORTD = 0x05;
+	movlw	(05h)
+	movwf	(8)	;volatile
 	line	34
 ;Line_Follower.c: 34: break;
 	goto	l11
