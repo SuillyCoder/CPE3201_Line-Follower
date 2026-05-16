@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<WORKSPACE>
+ <FRAME activeWindow="2">
+  <PLACEMENT>01d9d0cb00030000fffffffffffffff500000780000004680000006c000000f1000006e3000004670000000002000000078000000000000000220000077f00000467</PLACEMENT>
+  <WINDOW index="0" module="ISIS" type="default" mode="00050a01"/>
+  <WINDOW index="0" module="VSMSTUDIO" type="default" mode="00050a01">
+   <STATE VALUE="AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAFAAcgBvAGoAZQBjAHQAcwEAAAAA/////wAAASwA////+wAAABQAUAByAG8AcABlAHIAdABpAGUAcwAAAAAA/////wAAAI8A////AAAAAwAAAAAAAAAA/AEAAAAB/AAAAAD/////AAAAgAD////6AAAAAAEAAAAF+wAAACAATwB1AHQAcAB1AHQARABvAGMAawBXAGkAZABnAGUAdAEAAAAA/////wAAAIAA////+wAAABAAVABlAHIAbQBpAG4AYQBsAAAAAAD/////AAABzgD////7AAAAIgBCAHIAZQBhAGsAcABvAGkAbgB0AHMAVwBpAG4AZABvAHcAAAAAAP////8AAACAAP////sAAABAAGQAbwBjAGsAOgA0ADIAOQA0ADkANgA3ADIAOQA1ADoAMAA6AFMAaQBtAHUAbABhAHQAaQBvAG4AIABMAG8AZwAAAAAA/////wAAAAAAAAAA+wAAADwAZABvAGMAawA6ADQAMgA5ADQAOQA2ADcAMgA5ADUAOgAxADoAVwBhAHQAYwBoACAAVwBpAG4AZABvAHcAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAIAAAAAvwAAAAA" NAME="EDIT"/>
+   <TERMINAL>
+    <SERIAL DATABITS="8" STOPBITS="1" BAUD="9600" PARITY="0" PORT="COM6"/>
+    <CONSOLE>
+     <ITEM name="AUTOECHO">0</ITEM>
+     <ITEM name="ENCODING">System</ITEM>
+     <ITEM name="HEXMODE">0</ITEM>
+     <ITEM name="LINEMODE">0</ITEM>
+     <ITEM name="XONOFF">0</ITEM>
+    </CONSOLE>
+   </TERMINAL>
+   <PROJECT CONFIGURATION="Debug" NAME="PIC16F877A_1" ACTIVE="true">
+    <PROGRAMMER INTERFACE="" NAME=""/>
+   </PROJECT>
+   <EDITOR>
+    <FILE NAME="PIC16F877A_1/main.c" ACTIVE="1"/>
+   </EDITOR>
+  </WINDOW>
+ </FRAME>
+ <MODULE name="VSMEDIT">
+  <EDITOR>
+   <FILE NAME="PIC16F877A_1/main.c" ACTIVE="1"/>
+  </EDITOR>
+ </MODULE>
+ <MODULE name="ARES">
+  <editor xcursor="0" snaprange="0" scale="10" snap="0" gridmode="2" metric="0" zoom="10" gridmajor="0" flipped="0" orgmode="0" gridminor="0" snapidx="3">
+   <centre y="0" x="0"/>
+   <origin y="0" x="0"/>
+   <world x2="15240000" y2="12700000" y1="-12700000" x1="-15240000"/>
+  </editor>
+ </MODULE>
+ <MODULE name="VSMDEBUG">
+  <PWI>
+   <POPUP y="31" flags="00000082" iid="-1" pid="0" x="10" h="80" w="800">
+    <PROPERTIES>
+     <ITEM name="Message Column Width">580</ITEM>
+     <ITEM name="ShowGrid">No</ITEM>
+     <ITEM name="Source Column Width">100</ITEM>
+     <ITEM name="Version">100</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP y="51" flags="000000b2" iid="-1" pid="1" x="30" h="80" w="350">
+    <PROPERTIES>
+     <ITEM name="Address Column Width">100</ITEM>
+     <ITEM name="AutoResize">No</ITEM>
+     <ITEM name="Gridlines">Yes</ITEM>
+     <ITEM name="Name Column Width">100</ITEM>
+     <ITEM name="Previous Value Column Width">100</ITEM>
+     <ITEM name="ShowAddresses">Yes</ITEM>
+     <ITEM name="ShowPreviousValues">Yes</ITEM>
+     <ITEM name="ShowTypes">Yes</ITEM>
+     <ITEM name="ShowWatchPoint">Yes</ITEM>
+     <ITEM name="TriggerMode">0</ITEM>
+     <ITEM name="Type Column Width">100</ITEM>
+     <ITEM name="Value Column Width">100</ITEM>
+     <ITEM name="Version">100</ITEM>
+     <ITEM name="Watch Expression Column Width">100</ITEM>
+     <ITEM name="nItems">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP y="71" flags="000000a2" iid="-1" pid="2" x="50" h="200" w="800">
+    <PROPERTIES/>
+   </POPUP>
+  </PWI>
+ </MODULE>
+ <MODULE name="ISIS">
+  <debugState VALUE="AAAA/wAAAAH9AAAAAQAAAAMAAAAAAAAAAPwBAAAAAvsAAAAcAEUAZABpAHQAbwByACAAQwBvAG4AcwBvAGwAZQAAAAAA/////wAAAIAA////+wAAADwAZABvAGMAawA6ADQAMgA5ADQAOQA2ADcAMgA5ADUAOgAyADoAUwB5AHMAdABlAG0AIABTAGMAbwBwAGUAAAAAAP////8AAACaAP///wAAB00AAAOjAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAAAAAAEAAAAUAEUAZABpAHQAIABNAG8AZABlAHMDAAAAAP////8AAAAAAAAAAAAAAAIAAAAGAAAADgBNAG8AZAB1AGwAZQBzAQAAAAD/////AAAAAAAAAAAAAAAgAHYAYQByAGkAYQBuAHQAXwBzAGUAbABlAGMAdABvAHIAAAAAAP////8AAAAAAAAAAAAAABwAYgBvAGEAcgBkAF8AcwBlAGwAZQBjAHQAbwByAAAAAAD/////AAAAAAAAAAAAAAAYAFYAaQBlAHcAIABUAG8AbwBsAGIAYQByAQAAAtf/////AAAAAAAAAAAAAAAYAEUAZABpAHQAIABUAG8AbwBsAGIAYQByAQAABEz/////AAAAAAAAAAAAAAAcAEQAZQBzAGkAZwBuACAAVABvAG8AbABiAGEAcgEAAAaf/////wAAAAAAAAAAAAAAAwAAAAMAAAASAEEAbgBpAG0AYQB0AGkAbwBuAQAAAAD/////AAAAAAAAAAAAAAAUAHMAdABhAHQAdQBzAF8AYgBhAHIBAAABoP////8AAAAAAAAAAAAAABAAQwBvAG8AcgBkAEIAbwB4AQAABcP/////AAAAAAAAAAA="/>
+  <editor xcursor="0" snaprange="127000" scale="128" snap="254000" gridmode="2" metric="0" zoom="0" gridmajor="2540000" flipped="0" orgmode="0" gridminor="254000" snapidx="2">
+   <centre y="0" x="0"/>
+   <origin y="0" x="0"/>
+   <world x2="12700000" y2="8890000" y1="-8890000" x1="-12700000"/>
+  </editor>
+ </MODULE>
+</WORKSPACE>
