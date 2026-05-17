@@ -17,20 +17,37 @@ void main(void)
 
 	while (1)
 	{
-		sensor = PORTB & 0xC0;
 		switch (sensor)
 		{
-			case 0x40:
-				PORTD = 0x09;
+			case 0x20: // 0010 0000 -> Center sensor only
+				PORTD = 0x05; // Go straight
 				break;
-			case 0x80:
-				PORTD = 0x06;
+
+			case 0x40: // 0100 0000 -> Inner Left sensor
+				PORTD = 0x09; // Turn left (slight/soft turn)
 				break;
-			case 0xC0:
-				PORTD = 0x00;
+
+			case 0x80: // 1000 0000 -> Outer Left sensor
+				PORTD = 0x09; // Turn left (hard turn)
 				break;
+
+			case 0x10: // 0001 0000 -> Inner Right sensor
+				PORTD = 0x04; // Turn right (slight/soft turn)
+				break;
+
+			case 0x08: // 0000 1000 -> Outer Right sensor
+				PORTD = 0x04; // Turn right (hard turn)
+				break;
+
+			case 0xF8: // 1111 1000 -> All 5 sensors active (T-junction or Cross)
+			case 0x00: // 0000 0000 -> No sensors active (Lost line)
+				PORTD = 0x00; // Stop
+				break;
+
 			default:
-				PORTD = 0x05;
+				// Handles overlapping sensor reads (e.g., Center + Inner Left = 0x60)
+				// Defaulting to straight keeps the robot moving forward smoothly
+				PORTD = 0x05; // Go straight
 				break;
 		}
 	}
