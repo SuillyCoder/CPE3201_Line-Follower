@@ -26,7 +26,7 @@ void main(void)
 			//1001 hard right
 			//0110 hard left
 			case 0x20: // 0010 0000 -> Center sensor only
-				PORTD = 0x0A; // Go straight
+				PORTD = 0x05; // Go straight
 				break;
 
 			case 0x40: // 0100 0000 -> Inner Left sensor
@@ -52,7 +52,7 @@ void main(void)
 			default:
 				// Handles overlapping sensor reads (e.g., Center + Inner Left = 0x60)
 				// Defaulting to straight keeps the robot moving forward smoothly
-				PORTD = 0x0A; // Go straight
+				PORTD = 0x05; // Go straight
 				break;
 		}
 	}
