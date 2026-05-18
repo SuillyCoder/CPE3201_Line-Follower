@@ -17,7 +17,7 @@ void main(void)
 
 	while (1)
 	{
-		sensor = 
+		sensor = PORTB & 0xF8;
 		switch (sensor)
 		{
 			//1010 forward
