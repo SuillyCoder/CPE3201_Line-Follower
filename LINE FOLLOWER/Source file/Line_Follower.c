@@ -9,51 +9,75 @@
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-void main(void)
-{
-	unsigned char sensor;
-	TRISB = 0xC0;
-	TRISD = 0x00;
+void delay_ms(unsigned int ms) {
+    unsigned int i, j;
+    for (i = 0; i < ms; i++)
+        for (j = 0; j < 110; j++);
+}
 
-	while (1)
-	{
-		sensor = PORTB & 0xF8;
-		switch (sensor)
-		{
-			//1010 forward
-			//1000 right
-			//0010 left
-			//1001 hard right
-			//0110 hard left
-			case 0x20: // 0010 0000 -> Center sensor only
-				PORTD = 0x05; // Go straight
+void main(void) {
+    unsigned char sensor;
+
+    ADCON1 = 0x06;  // PORTE as digital
+    TRISD = 0x00;   // PORTD all output (Motor Direction)
+    TRISE = 0x00;   // PORTE all output (Motor Enable)
+    TRISB = 0xFF;   // PORTB all input  (IR Sensors)
+    TRISC = 0x00;   // PORTC all output
+
+    PORTD = 0x00;
+    PORTE = 0x00;
+    PORTC = 0x00;
+
+    while (1) {
+        sensor = PORTB & 0x07;  // Read RB0, RB1, RB2 only
+
+        switch (sensor) {
+            case 0x02:  // Center only: X010 
+                PORTE = 0x03;
+                PORTD = 0x50;
+                PORTC = 0x01;
+                break;
+            case 0x04:  // Left sensor: X100 
+				PORTE = 0x03;
+                PORTD = 0x90;   // Turn right
+                PORTC = 0x00;
+                break;
+            case 0x01:  // Right sensor: X001 -> RB2=1, RB1=1, RB0=0
+                PORTE = 0x03;
+                PORTD = 0x60;   // Turn right
+                PORTC = 0x00;
+                break;
+            case 0x07:  // All black = lost line, stop -> X111
+                PORTE = 0x00;
+                PORTD = 0x00;
+                PORTC = 0x00;
+                break;
+			//EXTRA CASES
+
+			case 0x05: // X101
+				PORTE = 0x03;
+                PORTD = 0x50;
+                PORTC = 0x01;
 				break;
 
-			case 0x40: // 0100 0000 -> Inner Left sensor
-				PORTD = 0x02; // Turn left (slight/soft turn)
+			case 0x03: // X011
+				PORTE = 0x03;
+                PORTD = 0x60;   // Turn right
+                PORTC = 0x00;
 				break;
-
-			case 0x80: // 1000 0000 -> Outer Left sensor
-				PORTD = 0x06; // Turn left (hard turn)
-				break;
-
-			case 0x10: // 0001 0000 -> Inner Right sensor
-				PORTD = 0x08; // Turn right (slight/soft turn)
-				break;
-
-			case 0x08: // 0000 1000 -> Outer Right sensor
-				PORTD = 0x09; // Turn right (hard turn)
-				break;
-
-			case 0x00: // 0000 0000 -> No sensors active (Lost line)
-				PORTD = 0x00; // Stop
-				break;
-
-			default:
-				// Handles overlapping sensor reads (e.g., Center + Inner Left = 0x60)
-				// Defaulting to straight keeps the robot moving forward smoothly
-				PORTD = 0x05; // Go straight
-				break;
-		}
-	}
+				
+			case 0x06:// X110
+				PORTE = 0x03;
+                PORTD = 0x90;   // Turn right
+                PORTC = 0x00;
+                break;
+				
+            default: // X000
+                PORTE = 0x03;
+                PORTD = 0x50;   // Default go straight
+                PORTC = 0x01;
+                break;
+        }
+        delay_ms(10);
+    }
 }

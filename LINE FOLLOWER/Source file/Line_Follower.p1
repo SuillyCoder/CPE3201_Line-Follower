@@ -1,13 +1,23 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"1335 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"2173 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
 "1457
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"207
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1518
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"1335
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1396
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "329
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"390
+[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"268
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"207
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f877a.h: 47: extern volatile unsigned char INDF @ 0x000;
@@ -1021,7 +1031,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
-"3 C:\Users\User\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c
+"3 C:\Users\enzoa\OneDrive\Documents\GitHub\CPE3201_Line-Follower\LINE FOLLOWER\Source file\Line_Follower.c
 [p x FOSC=XT ]
 "4
 [p x WDTE=OFF ]
@@ -1038,93 +1048,235 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10
 [p x CP=OFF ]
 "12
-[v _main `(v ~T0 @X0 1 ef ]
-"13
+[v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;Line_Follower.c: 12: void main(void)
-[; ;Line_Follower.c: 13: {
+[; ;Line_Follower.c: 12: void delay_ms(unsigned int ms) {
+[e :U _delay_ms ]
+[v _ms `ui ~T0 @X0 1 r1 ]
+[f ]
+"13
+[v _i `ui ~T0 @X0 1 a ]
+[v _j `ui ~T0 @X0 1 a ]
+[; ;Line_Follower.c: 13: unsigned int i, j;
+[; ;Line_Follower.c: 14: for (i = 0; i < ms; i++)
+"14
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 100  ]
+"15
+[e :U 97 ]
+[; ;Line_Follower.c: 15: for (j = 0; j < 110; j++);
+{
+[e = _j -> -> 0 `i `ui ]
+[e $ < _j -> -> 110 `i `ui 101  ]
+[e $U 102  ]
+[e :U 101 ]
+[e ++ _j -> -> 1 `i `ui ]
+[e $ < _j -> -> 110 `i `ui 101  ]
+[e :U 102 ]
+}
+"14
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 100 ]
+[e $ < _i _ms 97  ]
+[e :U 98 ]
+"15
+}
+[; ;Line_Follower.c: 16: }
+"16
+[e :UE 96 ]
+}
+"18
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[; ;Line_Follower.c: 18: void main(void) {
 [e :U _main ]
 [f ]
-"14
-[v _sensor `uc ~T0 @X0 1 a ]
-[; ;Line_Follower.c: 14: unsigned char sensor;
-[; ;Line_Follower.c: 15: TRISB = 0xC0;
-"15
-[e = _TRISB -> -> 192 `i `uc ]
-[; ;Line_Follower.c: 16: TRISD = 0x00;
-"16
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;Line_Follower.c: 18: while (1)
-"18
-[e :U 98 ]
-[; ;Line_Follower.c: 19: {
 "19
-{
-[; ;Line_Follower.c: 20: sensor = PORTB & 0xC0;
-"20
-[e = _sensor -> & -> _PORTB `i -> 192 `i `uc ]
-[; ;Line_Follower.c: 21: switch (sensor)
+[v _sensor `uc ~T0 @X0 1 a ]
+[; ;Line_Follower.c: 19: unsigned char sensor;
+[; ;Line_Follower.c: 21: ADCON1 = 0x06;
 "21
-[e $U 101  ]
-[; ;Line_Follower.c: 22: {
+[e = _ADCON1 -> -> 6 `i `uc ]
+[; ;Line_Follower.c: 22: TRISD = 0x00;
 "22
-{
-[; ;Line_Follower.c: 23: case 0x40:
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 23: TRISE = 0x00;
 "23
-[e :U 102 ]
-[; ;Line_Follower.c: 24: PORTD = 0x09;
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 24: TRISB = 0xFF;
 "24
-[e = _PORTD -> -> 9 `i `uc ]
-[; ;Line_Follower.c: 25: break;
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;Line_Follower.c: 25: TRISC = 0x00;
 "25
-[e $U 100  ]
-[; ;Line_Follower.c: 26: case 0x80:
-"26
-[e :U 103 ]
-[; ;Line_Follower.c: 27: PORTD = 0x06;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 27: PORTD = 0x00;
 "27
-[e = _PORTD -> -> 6 `i `uc ]
-[; ;Line_Follower.c: 28: break;
-"28
-[e $U 100  ]
-[; ;Line_Follower.c: 29: case 0xC0:
-"29
-[e :U 104 ]
-[; ;Line_Follower.c: 30: PORTD = 0x00;
-"30
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;Line_Follower.c: 31: break;
+[; ;Line_Follower.c: 28: PORTE = 0x00;
+"28
+[e = _PORTE -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 29: PORTC = 0x00;
+"29
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 31: while (1) {
 "31
-[e $U 100  ]
-[; ;Line_Follower.c: 32: default:
+[e :U 106 ]
+{
+[; ;Line_Follower.c: 32: sensor = PORTB & 0x07;
 "32
-[e :U 105 ]
-[; ;Line_Follower.c: 33: PORTD = 0x05;
-"33
-[e = _PORTD -> -> 5 `i `uc ]
-[; ;Line_Follower.c: 34: break;
+[e = _sensor -> & -> _PORTB `i -> 7 `i `uc ]
+[; ;Line_Follower.c: 34: switch (sensor) {
 "34
-[e $U 100  ]
+[e $U 109  ]
+{
+[; ;Line_Follower.c: 35: case 0x02:
 "35
-}
-[; ;Line_Follower.c: 35: }
-[e $U 100  ]
-"21
-[e :U 101 ]
-[e [\ _sensor , $ -> -> 64 `i `uc 102
- , $ -> -> 128 `i `uc 103
- , $ -> -> 192 `i `uc 104
- 105 ]
-"35
-[e :U 100 ]
+[e :U 110 ]
+[; ;Line_Follower.c: 36: PORTE = 0x03;
 "36
-}
-[e :U 97 ]
-"18
-[e $U 98  ]
-[e :U 99 ]
-[; ;Line_Follower.c: 36: }
-[; ;Line_Follower.c: 37: }
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 37: PORTD = 0x50;
 "37
-[e :UE 96 ]
+[e = _PORTD -> -> 80 `i `uc ]
+[; ;Line_Follower.c: 38: PORTC = 0x01;
+"38
+[e = _PORTC -> -> 1 `i `uc ]
+[; ;Line_Follower.c: 39: break;
+"39
+[e $U 108  ]
+[; ;Line_Follower.c: 40: case 0x04:
+"40
+[e :U 111 ]
+[; ;Line_Follower.c: 41: PORTE = 0x03;
+"41
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 42: PORTD = 0x90;
+"42
+[e = _PORTD -> -> 144 `i `uc ]
+[; ;Line_Follower.c: 43: PORTC = 0x00;
+"43
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 44: break;
+"44
+[e $U 108  ]
+[; ;Line_Follower.c: 45: case 0x01:
+"45
+[e :U 112 ]
+[; ;Line_Follower.c: 46: PORTE = 0x03;
+"46
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 47: PORTD = 0x60;
+"47
+[e = _PORTD -> -> 96 `i `uc ]
+[; ;Line_Follower.c: 48: PORTC = 0x00;
+"48
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 49: break;
+"49
+[e $U 108  ]
+[; ;Line_Follower.c: 50: case 0x07:
+"50
+[e :U 113 ]
+[; ;Line_Follower.c: 51: PORTE = 0x00;
+"51
+[e = _PORTE -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 52: PORTD = 0x00;
+"52
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 53: PORTC = 0x00;
+"53
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 54: break;
+"54
+[e $U 108  ]
+[; ;Line_Follower.c: 57: case 0x05:
+"57
+[e :U 114 ]
+[; ;Line_Follower.c: 58: PORTE = 0x03;
+"58
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 59: PORTD = 0x50;
+"59
+[e = _PORTD -> -> 80 `i `uc ]
+[; ;Line_Follower.c: 60: PORTC = 0x01;
+"60
+[e = _PORTC -> -> 1 `i `uc ]
+[; ;Line_Follower.c: 61: break;
+"61
+[e $U 108  ]
+[; ;Line_Follower.c: 63: case 0x03:
+"63
+[e :U 115 ]
+[; ;Line_Follower.c: 64: PORTE = 0x03;
+"64
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 65: PORTD = 0x60;
+"65
+[e = _PORTD -> -> 96 `i `uc ]
+[; ;Line_Follower.c: 66: PORTC = 0x00;
+"66
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 67: break;
+"67
+[e $U 108  ]
+[; ;Line_Follower.c: 69: case 0x06:
+"69
+[e :U 116 ]
+[; ;Line_Follower.c: 70: PORTE = 0x03;
+"70
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 71: PORTD = 0x90;
+"71
+[e = _PORTD -> -> 144 `i `uc ]
+[; ;Line_Follower.c: 72: PORTC = 0x00;
+"72
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;Line_Follower.c: 73: break;
+"73
+[e $U 108  ]
+[; ;Line_Follower.c: 75: default:
+"75
+[e :U 117 ]
+[; ;Line_Follower.c: 76: PORTE = 0x03;
+"76
+[e = _PORTE -> -> 3 `i `uc ]
+[; ;Line_Follower.c: 77: PORTD = 0x50;
+"77
+[e = _PORTD -> -> 80 `i `uc ]
+[; ;Line_Follower.c: 78: PORTC = 0x01;
+"78
+[e = _PORTC -> -> 1 `i `uc ]
+[; ;Line_Follower.c: 79: break;
+"79
+[e $U 108  ]
+"80
+}
+[; ;Line_Follower.c: 80: }
+[e $U 108  ]
+"34
+[e :U 109 ]
+[e [\ _sensor , $ -> -> 2 `i `uc 110
+ , $ -> -> 4 `i `uc 111
+ , $ -> -> 1 `i `uc 112
+ , $ -> -> 7 `i `uc 113
+ , $ -> -> 5 `i `uc 114
+ , $ -> -> 3 `i `uc 115
+ , $ -> -> 6 `i `uc 116
+ 117 ]
+"80
+[e :U 108 ]
+[; ;Line_Follower.c: 81: delay_ms(10);
+"81
+[e ( _delay_ms (1 -> -> 10 `i `ui ]
+"82
+}
+[e :U 105 ]
+"31
+[e $U 106  ]
+[e :U 107 ]
+[; ;Line_Follower.c: 82: }
+[; ;Line_Follower.c: 83: }
+"83
+[e :UE 104 ]
 }
