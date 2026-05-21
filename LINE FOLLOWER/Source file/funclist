@@ -1,4 +1,5 @@
-_main: CODE, 1965 0 79
+_main: CODE, 1819 0 225
+_run_motors: CODE, 1711 0 108
 __initialization: CODE, 2044 0 0
-_delay_ms: CODE, 1926 0 39
-Total: 118
+_delay_ms: CODE, 1672 0 39
+Total: 372
